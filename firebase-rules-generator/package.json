@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Helper package for building more complex Firebase rules with support for imports.",
   "main": "build/src/index.js",
-  "repository": "https://github.com/simpleclub/firebaser-rules-helper",
+  "repository": "https://github.com/simpleclub/firebase-rules-helper",
   "author": "simpleclub GmbH",
   "license": "BSD-3-Clause",
   "private": false,
@@ -23,7 +23,7 @@
     "posttest": "npm run lint",
     "test": "jest --runInBand",
     "test:dev": "jest --runInBand --watch",
-    "release": "yarn clean && yarn compile && cp -t ./build package.json README.md CHANGELOG.md && yarn publish ./build"
+    "release": "yarn clean && yarn compile && cp package.json ./build && cp README.md ./build && cp CHANGELOG.md ./build && yarn publish ./build"
   },
   "dependencies": {
     "meow": "^9.0.0",
