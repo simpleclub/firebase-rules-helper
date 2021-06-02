@@ -31,7 +31,7 @@ jobs:
         run: yarn install --cwd ${{ env.workdir }} --frozen-lockfile
 
       - name: Publish package to NPM
-        run: yarn --cwd ${{ env.workdir }} release
+        run: yarn --cwd ${{ env.workdir }} release --access public
         env:
           # NODE_AUTH_TOKEN is a special env variable that is written to .npmrc file
           # by `actions/setup-node@v1`
