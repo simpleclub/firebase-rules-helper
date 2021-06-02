@@ -11,6 +11,6 @@ module.exports = {
   coverageReporters: [
     'text',
     'text-summary',
-    ['lcov', {projectRoot: '../../'}],
+    ['lcov', {projectRoot: '../'}],
   ],
 };
