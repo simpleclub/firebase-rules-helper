@@ -21,30 +21,31 @@ jobs:
         # 4. push it into GITHUB_ENV so it can be access via {{ env.* }}
         run: echo "workdir=$(echo ${{ github.event.release.tag_name }} | sed 's/[a-z@]*\///' | sed 's/@.*//')" >> $GITHUB_ENV
 
-      # Publish to Github packages
-      - uses: actions/setup-node@v2
-        with:
-          node-version: "12"
-          registry-url: 'https://npm.pkg.github.com'
-
-      - name: Install dependencies
-        run: yarn install --cwd ${{ env.workdir }} --frozen-lockfile
-
-      - name: Publish package to GitHub packages
-        run: yarn --cwd ${{ env.workdir }} release
-        env:
-          # NODE_AUTH_TOKEN is a special env variable that is written to .npmrc file
-          # by `actions/setup-node@v1`
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
       # Publish to NPM
       - uses: actions/setup-node@v2
         with:
           node-version: "12"
           registry-url: 'https://registry.npmjs.org'
+
+      - name: Install dependencies
+        run: yarn install --cwd ${{ env.workdir }} --frozen-lockfile
+
       - name: Publish package to NPM
         run: yarn --cwd ${{ env.workdir }} release
         env:
           # NODE_AUTH_TOKEN is a special env variable that is written to .npmrc file
           # by `actions/setup-node@v1`
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      
+      # Publish to Github packages
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "12"
+          registry-url: 'https://npm.pkg.github.com'
+      
+      - name: Publish package to GitHub packages
+        run: yarn --cwd ${{ env.workdir }} release
+        env:
+          # NODE_AUTH_TOKEN is a special env variable that is written to .npmrc file
+          # by `actions/setup-node@v1`
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
