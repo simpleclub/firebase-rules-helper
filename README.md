@@ -2,7 +2,7 @@
 
 ---
 
-# Firebase rules helper
+# Firebase rules helper [![Coverage Status](https://coveralls.io/repos/github/simpleclub/firebase-rules-helper/badge.svg?branch=main)](https://coveralls.io/github/simpleclub/firebase-rules-helper?branch=main)
 This repo contains a collection of packages aimed to make working with Firebase rules easier.
 
 You can mix and match those packages as you wish.

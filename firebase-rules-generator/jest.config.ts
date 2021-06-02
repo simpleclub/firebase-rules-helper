@@ -8,9 +8,5 @@ module.exports = {
   },
   collectCoverage: true,
   collectCoverageFrom: ['src/**/*.ts'],
-  coverageReporters: [
-    'text',
-    'text-summary',
-    ['lcov', {projectRoot: '../../'}],
-  ],
+  coverageReporters: ['text', 'text-summary', ['lcov', {projectRoot: '../'}]],
 };
