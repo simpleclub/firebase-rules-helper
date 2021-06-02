@@ -55,9 +55,8 @@ jobs:
       - name: Run tests
         run: yarn test
         working-directory: ${{ matrix.package }}
-      - name: Debug
-        run: cat './${{ matrix.package }}/coverage/lcov.info'
       - name: Report coverage
+        if: ${{ success() || failure() }}
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.github_token }}
@@ -68,6 +67,7 @@ jobs:
   finish:
     needs: test
     runs-on: ubuntu-latest
+    if: ${{ success() || failure() }}
     steps:
     - name: Finalize coverage reporting
       uses: coverallsapp/github-action@master
