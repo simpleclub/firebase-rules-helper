@@ -55,6 +55,8 @@ jobs:
       - name: Run tests
         run: yarn test
         working-directory: ${{ matrix.package }}
+      - name: Debug
+        run: cat './${{ matrix.package }}/coverage/lcov.info'
       - name: Report coverage
         uses: coverallsapp/github-action@master
         with:
