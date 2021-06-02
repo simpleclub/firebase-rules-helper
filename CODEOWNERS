@@ -1,0 +1,6 @@
+# Matches everything regarding the overall repo setup, but not the individual packages.
+*                               @IchordeDionysos
+
+# Matches each package individually.
+firebase-rules-coverage/        @IchordeDionysos
+firebase-rules-generator/       @IchordeDionysos

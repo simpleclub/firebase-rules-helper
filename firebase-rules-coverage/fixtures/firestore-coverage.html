@@ -1,0 +1,724 @@
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Firestore Rule Coverage Report</title>
+<style>
+    .coverage-expr {
+        padding-bottom: 4px;
+        display: inline-block;
+        border-bottom: 3px solid black;
+        vertical-align: top;
+    }
+    .coverage-expr:hover {
+        background-color: rgba(255, 100, 100, 0.2);
+        cursor: default;
+        border-bottom: 3px solid red;
+    }
+</style>
+
+<script>
+    // Populated by the emulator at runtime
+    const data = {
+        "rules": {
+            "files": [{
+                "content": "service cloud.firestore {\n  match /databases/{database}/documents {\n  \t// [FUNCTIONS END]\n  \tmatch /users/{userId} {\n    \tallow read: if request.auth.uid \u003d\u003d userId || request.auth.uid \u003d\u003d \u0027foo\u0027;\n    }\n  \tmatch /articles/{articleId} {\n    \tallow read: if request.auth !\u003d null;\n    }\n  }\n}\n"
+            }]
+        },
+        "report": [{
+            "sourcePosition": {
+                "line": 5,
+                "column": 21,
+                "currentOffset": 137,
+                "endOffset": 191
+            },
+            "values": [{
+                "value": {
+                    "boolValue": true
+                },
+                "count": 1
+            }, {
+                "value": {
+                    "boolValue": false
+                },
+                "count": 1
+            }],
+            "children": [{
+                "sourcePosition": {
+                    "line": 5,
+                    "column": 21,
+                    "currentOffset": 137,
+                    "endOffset": 162
+                },
+                "values": [{
+                    "value": {
+                        "boolValue": true
+                    },
+                    "count": 1
+                }, {
+                    "value": {
+                        "boolValue": false
+                    },
+                    "count": 1
+                }],
+                "children": [{
+                    "sourcePosition": {
+                        "line": 5,
+                        "column": 21,
+                        "currentOffset": 137,
+                        "endOffset": 152
+                    },
+                    "values": [{
+                        "value": {
+                            "stringValue": "alice"
+                        },
+                        "count": 2
+                    }],
+                    "children": [{
+                        "sourcePosition": {
+                            "line": 5,
+                            "column": 21,
+                            "currentOffset": 137,
+                            "endOffset": 148
+                        },
+                        "values": [{
+                            "value": {
+                                "mapValue": {
+                                    "fields": {
+                                        "uid": {
+                                            "stringValue": "alice"
+                                        },
+                                        "token": {
+                                            "mapValue": {
+                                                "fields": {
+                                                    "iss": {
+                                                        "stringValue": "https://securetoken.google.com/firestore-emulator-example"
+                                                    },
+                                                    "aud": {
+                                                        "stringValue": "firestore-emulator-example"
+                                                    },
+                                                    "iat": {
+                                                        "intValue": "0"
+                                                    },
+                                                    "exp": {
+                                                        "intValue": "3600"
+                                                    },
+                                                    "auth_time": {
+                                                        "intValue": "0"
+                                                    },
+                                                    "sub": {
+                                                        "stringValue": "alice"
+                                                    },
+                                                    "user_id": {
+                                                        "stringValue": "alice"
+                                                    },
+                                                    "firebase": {
+                                                        "mapValue": {
+                                                            "fields": {
+                                                                "sign_in_provider": {
+                                                                    "stringValue": "custom"
+                                                                },
+                                                                "identities": {
+                                                                    "mapValue": {
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "count": 2
+                        }],
+                        "children": [{
+                            "sourcePosition": {
+                                "line": 5,
+                                "column": 21,
+                                "currentOffset": 137,
+                                "endOffset": 143
+                            },
+                            "values": [{
+                                "value": {
+                                    "mapValue": {
+                                        "fields": {
+                                            "time": {
+                                                "timestampValue": "2021-05-01T09:11:31.742Z"
+                                            },
+                                            "auth": {
+                                                "mapValue": {
+                                                    "fields": {
+                                                        "uid": {
+                                                            "stringValue": "alice"
+                                                        },
+                                                        "token": {
+                                                            "mapValue": {
+                                                                "fields": {
+                                                                    "iss": {
+                                                                        "stringValue": "https://securetoken.google.com/firestore-emulator-example"
+                                                                    },
+                                                                    "aud": {
+                                                                        "stringValue": "firestore-emulator-example"
+                                                                    },
+                                                                    "iat": {
+                                                                        "intValue": "0"
+                                                                    },
+                                                                    "exp": {
+                                                                        "intValue": "3600"
+                                                                    },
+                                                                    "auth_time": {
+                                                                        "intValue": "0"
+                                                                    },
+                                                                    "sub": {
+                                                                        "stringValue": "alice"
+                                                                    },
+                                                                    "user_id": {
+                                                                        "stringValue": "alice"
+                                                                    },
+                                                                    "firebase": {
+                                                                        "mapValue": {
+                                                                            "fields": {
+                                                                                "sign_in_provider": {
+                                                                                    "stringValue": "custom"
+                                                                                },
+                                                                                "identities": {
+                                                                                    "mapValue": {
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "headers": {
+                                                "mapValue": {
+                                                }
+                                            },
+                                            "inTransaction": {
+                                                "boolValue": false
+                                            },
+                                            "path": {
+                                                "pathValue": {
+                                                    "segments": [{
+                                                        "simple": "databases"
+                                                    }, {
+                                                        "simple": "(default)"
+                                                    }, {
+                                                        "simple": "documents"
+                                                    }, {
+                                                        "simple": "users"
+                                                    }, {
+                                                        "simple": "alice"
+                                                    }]
+                                                }
+                                            },
+                                            "fields": {
+                                                "nullValue": null
+                                            },
+                                            "method": {
+                                                "stringValue": "get"
+                                            }
+                                        }
+                                    }
+                                },
+                                "count": 1
+                            }, {
+                                "value": {
+                                    "mapValue": {
+                                        "fields": {
+                                            "time": {
+                                                "timestampValue": "2021-05-01T09:11:31.845Z"
+                                            },
+                                            "auth": {
+                                                "mapValue": {
+                                                    "fields": {
+                                                        "uid": {
+                                                            "stringValue": "alice"
+                                                        },
+                                                        "token": {
+                                                            "mapValue": {
+                                                                "fields": {
+                                                                    "iss": {
+                                                                        "stringValue": "https://securetoken.google.com/firestore-emulator-example"
+                                                                    },
+                                                                    "aud": {
+                                                                        "stringValue": "firestore-emulator-example"
+                                                                    },
+                                                                    "iat": {
+                                                                        "intValue": "0"
+                                                                    },
+                                                                    "exp": {
+                                                                        "intValue": "3600"
+                                                                    },
+                                                                    "auth_time": {
+                                                                        "intValue": "0"
+                                                                    },
+                                                                    "sub": {
+                                                                        "stringValue": "alice"
+                                                                    },
+                                                                    "user_id": {
+                                                                        "stringValue": "alice"
+                                                                    },
+                                                                    "firebase": {
+                                                                        "mapValue": {
+                                                                            "fields": {
+                                                                                "sign_in_provider": {
+                                                                                    "stringValue": "custom"
+                                                                                },
+                                                                                "identities": {
+                                                                                    "mapValue": {
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "headers": {
+                                                "mapValue": {
+                                                }
+                                            },
+                                            "inTransaction": {
+                                                "boolValue": false
+                                            },
+                                            "path": {
+                                                "pathValue": {
+                                                    "segments": [{
+                                                        "simple": "databases"
+                                                    }, {
+                                                        "simple": "(default)"
+                                                    }, {
+                                                        "simple": "documents"
+                                                    }, {
+                                                        "simple": "users"
+                                                    }, {
+                                                        "simple": "bob"
+                                                    }]
+                                                }
+                                            },
+                                            "fields": {
+                                                "nullValue": null
+                                            },
+                                            "method": {
+                                                "stringValue": "get"
+                                            }
+                                        }
+                                    }
+                                },
+                                "count": 1
+                            }]
+                        }]
+                    }]
+                }, {
+                    "sourcePosition": {
+                        "line": 5,
+                        "column": 41,
+                        "currentOffset": 157,
+                        "endOffset": 162
+                    },
+                    "values": [{
+                        "value": {
+                            "stringValue": "alice"
+                        },
+                        "count": 1
+                    }, {
+                        "value": {
+                            "stringValue": "bob"
+                        },
+                        "count": 1
+                    }]
+                }]
+            }, {
+                "sourcePosition": {
+                    "line": 5,
+                    "column": 51,
+                    "currentOffset": 167,
+                    "endOffset": 191
+                },
+                "values": [{
+                    "value": {
+                    },
+                    "count": 1
+                }, {
+                    "value": {
+                        "boolValue": false
+                    },
+                    "count": 1
+                }],
+                "children": [{
+                    "sourcePosition": {
+                        "line": 5,
+                        "column": 51,
+                        "currentOffset": 167,
+                        "endOffset": 182
+                    },
+                    "values": [{
+                        "value": {
+                        },
+                        "count": 1
+                    }, {
+                        "value": {
+                            "stringValue": "alice"
+                        },
+                        "count": 1
+                    }],
+                    "children": [{
+                        "sourcePosition": {
+                            "line": 5,
+                            "column": 51,
+                            "currentOffset": 167,
+                            "endOffset": 178
+                        },
+                        "values": [{
+                            "value": {
+                            },
+                            "count": 1
+                        }, {
+                            "value": {
+                                "mapValue": {
+                                    "fields": {
+                                        "uid": {
+                                            "stringValue": "alice"
+                                        },
+                                        "token": {
+                                            "mapValue": {
+                                                "fields": {
+                                                    "iss": {
+                                                        "stringValue": "https://securetoken.google.com/firestore-emulator-example"
+                                                    },
+                                                    "aud": {
+                                                        "stringValue": "firestore-emulator-example"
+                                                    },
+                                                    "iat": {
+                                                        "intValue": "0"
+                                                    },
+                                                    "exp": {
+                                                        "intValue": "3600"
+                                                    },
+                                                    "auth_time": {
+                                                        "intValue": "0"
+                                                    },
+                                                    "sub": {
+                                                        "stringValue": "alice"
+                                                    },
+                                                    "user_id": {
+                                                        "stringValue": "alice"
+                                                    },
+                                                    "firebase": {
+                                                        "mapValue": {
+                                                            "fields": {
+                                                                "sign_in_provider": {
+                                                                    "stringValue": "custom"
+                                                                },
+                                                                "identities": {
+                                                                    "mapValue": {
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "count": 1
+                        }],
+                        "children": [{
+                            "sourcePosition": {
+                                "line": 5,
+                                "column": 51,
+                                "currentOffset": 167,
+                                "endOffset": 173
+                            },
+                            "values": [{
+                                "value": {
+                                },
+                                "count": 1
+                            }, {
+                                "value": {
+                                    "mapValue": {
+                                        "fields": {
+                                            "time": {
+                                                "timestampValue": "2021-05-01T09:11:31.845Z"
+                                            },
+                                            "auth": {
+                                                "mapValue": {
+                                                    "fields": {
+                                                        "uid": {
+                                                            "stringValue": "alice"
+                                                        },
+                                                        "token": {
+                                                            "mapValue": {
+                                                                "fields": {
+                                                                    "iss": {
+                                                                        "stringValue": "https://securetoken.google.com/firestore-emulator-example"
+                                                                    },
+                                                                    "aud": {
+                                                                        "stringValue": "firestore-emulator-example"
+                                                                    },
+                                                                    "iat": {
+                                                                        "intValue": "0"
+                                                                    },
+                                                                    "exp": {
+                                                                        "intValue": "3600"
+                                                                    },
+                                                                    "auth_time": {
+                                                                        "intValue": "0"
+                                                                    },
+                                                                    "sub": {
+                                                                        "stringValue": "alice"
+                                                                    },
+                                                                    "user_id": {
+                                                                        "stringValue": "alice"
+                                                                    },
+                                                                    "firebase": {
+                                                                        "mapValue": {
+                                                                            "fields": {
+                                                                                "sign_in_provider": {
+                                                                                    "stringValue": "custom"
+                                                                                },
+                                                                                "identities": {
+                                                                                    "mapValue": {
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "headers": {
+                                                "mapValue": {
+                                                }
+                                            },
+                                            "inTransaction": {
+                                                "boolValue": false
+                                            },
+                                            "path": {
+                                                "pathValue": {
+                                                    "segments": [{
+                                                        "simple": "databases"
+                                                    }, {
+                                                        "simple": "(default)"
+                                                    }, {
+                                                        "simple": "documents"
+                                                    }, {
+                                                        "simple": "users"
+                                                    }, {
+                                                        "simple": "bob"
+                                                    }]
+                                                }
+                                            },
+                                            "fields": {
+                                                "nullValue": null
+                                            },
+                                            "method": {
+                                                "stringValue": "get"
+                                            }
+                                        }
+                                    }
+                                },
+                                "count": 1
+                            }]
+                        }]
+                    }]
+                }]
+            }]
+        }, {
+            "sourcePosition": {
+                "line": 8,
+                "column": 21,
+                "currentOffset": 253,
+                "endOffset": 272
+            },
+            "children": [{
+                "sourcePosition": {
+                    "line": 8,
+                    "column": 21,
+                    "currentOffset": 253,
+                    "endOffset": 264
+                },
+                "children": [{
+                    "sourcePosition": {
+                        "line": 8,
+                        "column": 21,
+                        "currentOffset": 253,
+                        "endOffset": 259
+                    }
+                }]
+            }]
+        }]
+    };
+
+    const REPORT_LIMIT_SIZE = 15
+
+    window.onload = function() {
+        if (data.rules.files.length == 1) {
+            document.body.appendChild(buildFormattedReport(data.report || [], data.rules.files[0].content))
+        } else {
+            document.body.appendChild(document.createTextNode('Only single-file rules supported. ' +
+                'If you encounter this please visit https://github.com/firebase/firebase-tools/issues'))
+        }
+    };
+
+    /**
+     * Builds the html block with span elements for rule visualization.
+     *
+     * @param expressionList The list of expression blocks.
+     * @param ruleString The full text of the rules with newlines and special characters escaped.
+     * @return A <pre> html element with <span></span> around expressions and subexpressions within
+     *     .write, .read, and .validate tokens so that they can be selected.
+     */
+    function buildFormattedReport(expressionList, ruleString) {
+        const elements = Object.keys(expressionList).map((key) => {
+            return mapExpressionBlock(expressionList[key], ruleString)
+        })
+        const withText = interpolateTextNodes(
+            elements,
+            ruleString,
+            0,
+            ruleString.length
+        )
+        var preElement = document.createElement('pre')
+        withText.forEach((element) => preElement.appendChild(element.element))
+        return preElement
+    }
+
+    /**
+     * Traverses an expression block.
+     *
+     * Each expression needs to be wrapped in a span and so it's children need to be immediately
+     * resolved so they can be added to the element.
+     *
+     * @param expressionBlock The current recursive chunk of expression data.
+     * @param ruleString The full text of the rules with newlines and special characters escaped.
+     * @return A single object with at least the keys start, end, and element. Element is the span
+     *    element for that [sub]expression. The span element should have all it's children
+     *    already added.
+     */
+    function mapExpressionBlock(expressionBlock, ruleString) {
+        const start = expressionBlock.sourcePosition.currentOffset
+        const end = expressionBlock.sourcePosition.endOffset + 1
+        const onlyChildSpans = (expressionBlock.children || []).map(
+            (child) => mapExpressionBlock(child, ruleString)
+        )
+        const allChildren = interpolateTextNodes(
+            onlyChildSpans,
+            ruleString,
+            start,
+            end,
+            true
+        )
+        var span = document.createElement('span')
+        allChildren.forEach((child) => {
+            span.appendChild(child.element)
+        })
+        span.classList.add('coverage-expr')
+        span.title = buildValueString(expressionBlock.values);
+        return {
+            element: span,
+            start: start,
+            end: end
+        }
+    }
+
+    /**
+     * The formatted report data has information about where subexpression are located. It does not,
+     * however, have information about text around these expressions. This function takes a formatted
+     * list of spans (representing expressions) and puts surrounding text into text elements and
+     * returns the list of all elements in that given text-area.
+     *
+     * @param objs the list of spans to have their bounds interpolated. Each element in the list should
+     *    formatted with the keys start, end, and element.
+     * @param ruleString The full text of the rules with newlines and special characters escaped.
+     * @param optStart An optional start index to start gathering text-elements from.
+     * @param optEnd An optional end index to finish gathering text-elements at.
+     * @param whether to remove newlines from the text values.
+     * @return An interpolated list with all indices from start to end of the ruleString being
+     *    included in either a span or a text element.
+     */
+    function interpolateTextNodes(objs, ruleString, start = null, end = null, removeNewLines = false) {
+        // Arrays so null objects aren't appended (options)
+        const expressionStart = start !== null ? [{'end': start}] : []
+        const expressionEnd = end !== null ? [{'start': end}] : []
+        const sortedInnerBlocks = (objs || []).sort((a, b) => (a['start'] - b['start']))
+        const blocksWithBounds = [].concat(expressionStart, sortedInnerBlocks, expressionEnd)
+        const interpolatedBlocks = blocksWithBounds.reduce((allChildren, child, idx) => {
+            if (allChildren && allChildren.length) {
+                const lastEnd = allChildren[allChildren.length - 1]['end']
+                const thisStart = child['start']
+                // This is an array so that we don't append null objects
+                if (lastEnd < thisStart) {
+                    const text = ruleString.substring(lastEnd, thisStart)
+                    const textElement = [{
+                        element: document.createTextNode(removeNewLines ? text.replace(/\n\s*/g,' ') : text),
+                        'start': allChildren[allChildren.length - 1]['end'],
+                        'end': child['start']
+                    }]
+                    return allChildren.concat(textElement, child)
+                }
+            }
+            return allChildren.concat(child)
+        }, [])
+        return interpolatedBlocks.filter(
+            (child) => child['start'] !== undefined && child['end'] !== undefined
+        )
+    }
+
+    /**
+     * Creates the mouse-over text for each span.
+     *
+     * @param values The array of value objects formatted as {value: **, count: **}.
+     * @return A single string for the mouse-over text.
+     */
+    function buildValueString(values) {
+        if (!values || !values.length) {
+            return 'Expression never evaluated'
+        } else if (values.length >= REPORT_LIMIT_SIZE) {
+            const allCounts = values.reduce((acc, obj) => acc + obj.count, 0)
+            return `${values.length} distinct items returned over ${allCounts} times`
+        } else {
+            return values.map(({value, count}) => {
+                const allowedTypes = ['nullValue', 'boolValue', 'intValue', 'floatValue', 'stringValue',
+                    'bytesValue', 'durationValue', 'timestampValue', 'latlngValue', 'pathValue']
+                const compressedTypes = ['mapValue', 'listValue', 'constraintValue']
+                const typeAllowed = allowedTypes.filter(type => value[type] !== undefined).length == 1
+                const typeCompressed = compressedTypes.filter(type => value[type] !== undefined).length >= 1
+                // Format is value = {returnType: returnValue}
+                // A returnType of undefined is an error. Unfortunately the field is called undefined.
+                if (value['undefined']) {
+                    // Expression evaluated to error
+                    return `Error '${value.undefined.causeMessage}' occurred ${count} time(s)`
+                } else if (typeCompressed) {
+                    // These types are recursive and are hard to read
+                    return `[object Object] returned ${count} time(s)`
+                } else if (typeAllowed) {
+                    // The response is a simple literal
+                    // Object.values is not ES2015
+                    const realValue = Object.keys(value).map((key) => value[key])[0]
+                    return `Value ${JSON.stringify(realValue)} returned ${count} time(s)`
+                } else if (Object.keys(value).length === 0) {
+                    // Clause not evaluated because of short-circuit.
+                    return `Expression short-circuited ${count} time(s)`
+                } else {
+                    // For a properly formatted response each value should have one type.
+                    console.error('Found invalid expression-return type.')
+                }
+            }).join('\n')
+        }
+    }
+</script>

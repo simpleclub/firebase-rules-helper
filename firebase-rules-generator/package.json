@@ -1,0 +1,41 @@
+{
+  "name": "@simpleclub/firebase-rules-generator",
+  "version": "0.1.0",
+  "description": "Helper package for building more complex Firebase rules with support for imports.",
+  "main": "build/src/index.js",
+  "repository": "https://github.com/simpleclub/firebaser-rules-helper",
+  "author": "simpleclub GmbH",
+  "license": "BSD-3-Clause",
+  "private": false,
+  "bin": {
+    "firebase-rules-generator": "build/src/cli.js"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "scripts": {
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "compile": "tsc",
+    "fix": "gts fix",
+    "prepare": "npm run compile",
+    "pretest": "npm run compile",
+    "posttest": "npm run lint",
+    "test": "jest --runInBand",
+    "test:dev": "jest --runInBand --watch",
+    "release": "yarn clean && yarn compile && cp -t ./build package.json README.md CHANGELOG.md && yarn publish ./build"
+  },
+  "dependencies": {
+    "meow": "^9.0.0",
+    "source-map": "^0.7.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.23",
+    "@types/node": "^15.6.1",
+    "gts": "^3.1.0",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.5.6",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.2"
+  }
+}

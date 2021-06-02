@@ -1,0 +1,545 @@
+{
+  "rules": {
+    "files": [{
+      "content": "service cloud.firestore {\n  match /databases/{database}/documents {\n  \t// [FUNCTIONS END]\n  \tmatch /users/{userId} {\n    \tallow read: if request.auth.uid == userId || request.auth.uid == 'foo';\n    }\n  \tmatch /articles/{articleId} {\n    \tallow read: if request.auth != null;\n    }\n  }\n}\n"
+    }]
+  },
+  "report": [{
+    "sourcePosition": {
+      "line": 5,
+      "column": 21,
+      "currentOffset": 137,
+      "endOffset": 191
+    },
+    "values": [{
+      "value": {
+        "boolValue": true
+      },
+      "count": 1
+    }, {
+      "value": {
+        "boolValue": false
+      },
+      "count": 1
+    }],
+    "children": [{
+      "sourcePosition": {
+        "line": 5,
+        "column": 21,
+        "currentOffset": 137,
+        "endOffset": 162
+      },
+      "values": [{
+        "value": {
+          "boolValue": true
+        },
+        "count": 1
+      }, {
+        "value": {
+          "boolValue": false
+        },
+        "count": 1
+      }],
+      "children": [{
+        "sourcePosition": {
+          "line": 5,
+          "column": 21,
+          "currentOffset": 137,
+          "endOffset": 152
+        },
+        "values": [{
+          "value": {
+            "stringValue": "alice"
+          },
+          "count": 2
+        }],
+        "children": [{
+          "sourcePosition": {
+            "line": 5,
+            "column": 21,
+            "currentOffset": 137,
+            "endOffset": 148
+          },
+          "values": [{
+            "value": {
+              "mapValue": {
+                "fields": {
+                  "uid": {
+                    "stringValue": "alice"
+                  },
+                  "token": {
+                    "mapValue": {
+                      "fields": {
+                        "iss": {
+                          "stringValue": "https://securetoken.google.com/firestore-emulator-example"
+                        },
+                        "aud": {
+                          "stringValue": "firestore-emulator-example"
+                        },
+                        "iat": {
+                          "intValue": "0"
+                        },
+                        "exp": {
+                          "intValue": "3600"
+                        },
+                        "auth_time": {
+                          "intValue": "0"
+                        },
+                        "sub": {
+                          "stringValue": "alice"
+                        },
+                        "user_id": {
+                          "stringValue": "alice"
+                        },
+                        "firebase": {
+                          "mapValue": {
+                            "fields": {
+                              "sign_in_provider": {
+                                "stringValue": "custom"
+                              },
+                              "identities": {
+                                "mapValue": {
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "count": 2
+          }],
+          "children": [{
+            "sourcePosition": {
+              "line": 5,
+              "column": 21,
+              "currentOffset": 137,
+              "endOffset": 143
+            },
+            "values": [{
+              "value": {
+                "mapValue": {
+                  "fields": {
+                    "time": {
+                      "timestampValue": "2021-05-01T09:11:31.742Z"
+                    },
+                    "auth": {
+                      "mapValue": {
+                        "fields": {
+                          "uid": {
+                            "stringValue": "alice"
+                          },
+                          "token": {
+                            "mapValue": {
+                              "fields": {
+                                "iss": {
+                                  "stringValue": "https://securetoken.google.com/firestore-emulator-example"
+                                },
+                                "aud": {
+                                  "stringValue": "firestore-emulator-example"
+                                },
+                                "iat": {
+                                  "intValue": "0"
+                                },
+                                "exp": {
+                                  "intValue": "3600"
+                                },
+                                "auth_time": {
+                                  "intValue": "0"
+                                },
+                                "sub": {
+                                  "stringValue": "alice"
+                                },
+                                "user_id": {
+                                  "stringValue": "alice"
+                                },
+                                "firebase": {
+                                  "mapValue": {
+                                    "fields": {
+                                      "sign_in_provider": {
+                                        "stringValue": "custom"
+                                      },
+                                      "identities": {
+                                        "mapValue": {
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "headers": {
+                      "mapValue": {
+                      }
+                    },
+                    "inTransaction": {
+                      "boolValue": false
+                    },
+                    "path": {
+                      "pathValue": {
+                        "segments": [{
+                          "simple": "databases"
+                        }, {
+                          "simple": "(default)"
+                        }, {
+                          "simple": "documents"
+                        }, {
+                          "simple": "users"
+                        }, {
+                          "simple": "alice"
+                        }]
+                      }
+                    },
+                    "fields": {
+                      "nullValue": null
+                    },
+                    "method": {
+                      "stringValue": "get"
+                    }
+                  }
+                }
+              },
+              "count": 1
+            }, {
+              "value": {
+                "mapValue": {
+                  "fields": {
+                    "time": {
+                      "timestampValue": "2021-05-01T09:11:31.845Z"
+                    },
+                    "auth": {
+                      "mapValue": {
+                        "fields": {
+                          "uid": {
+                            "stringValue": "alice"
+                          },
+                          "token": {
+                            "mapValue": {
+                              "fields": {
+                                "iss": {
+                                  "stringValue": "https://securetoken.google.com/firestore-emulator-example"
+                                },
+                                "aud": {
+                                  "stringValue": "firestore-emulator-example"
+                                },
+                                "iat": {
+                                  "intValue": "0"
+                                },
+                                "exp": {
+                                  "intValue": "3600"
+                                },
+                                "auth_time": {
+                                  "intValue": "0"
+                                },
+                                "sub": {
+                                  "stringValue": "alice"
+                                },
+                                "user_id": {
+                                  "stringValue": "alice"
+                                },
+                                "firebase": {
+                                  "mapValue": {
+                                    "fields": {
+                                      "sign_in_provider": {
+                                        "stringValue": "custom"
+                                      },
+                                      "identities": {
+                                        "mapValue": {
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "headers": {
+                      "mapValue": {
+                      }
+                    },
+                    "inTransaction": {
+                      "boolValue": false
+                    },
+                    "path": {
+                      "pathValue": {
+                        "segments": [{
+                          "simple": "databases"
+                        }, {
+                          "simple": "(default)"
+                        }, {
+                          "simple": "documents"
+                        }, {
+                          "simple": "users"
+                        }, {
+                          "simple": "bob"
+                        }]
+                      }
+                    },
+                    "fields": {
+                      "nullValue": null
+                    },
+                    "method": {
+                      "stringValue": "get"
+                    }
+                  }
+                }
+              },
+              "count": 1
+            }]
+          }]
+        }]
+      }, {
+        "sourcePosition": {
+          "line": 5,
+          "column": 41,
+          "currentOffset": 157,
+          "endOffset": 162
+        },
+        "values": [{
+          "value": {
+            "stringValue": "alice"
+          },
+          "count": 1
+        }, {
+          "value": {
+            "stringValue": "bob"
+          },
+          "count": 1
+        }]
+      }]
+    }, {
+      "sourcePosition": {
+        "line": 5,
+        "column": 51,
+        "currentOffset": 167,
+        "endOffset": 191
+      },
+      "values": [{
+        "value": {
+        },
+        "count": 1
+      }, {
+        "value": {
+          "boolValue": false
+        },
+        "count": 1
+      }],
+      "children": [{
+        "sourcePosition": {
+          "line": 5,
+          "column": 51,
+          "currentOffset": 167,
+          "endOffset": 182
+        },
+        "values": [{
+          "value": {
+          },
+          "count": 1
+        }, {
+          "value": {
+            "stringValue": "alice"
+          },
+          "count": 1
+        }],
+        "children": [{
+          "sourcePosition": {
+            "line": 5,
+            "column": 51,
+            "currentOffset": 167,
+            "endOffset": 178
+          },
+          "values": [{
+            "value": {
+            },
+            "count": 1
+          }, {
+            "value": {
+              "mapValue": {
+                "fields": {
+                  "uid": {
+                    "stringValue": "alice"
+                  },
+                  "token": {
+                    "mapValue": {
+                      "fields": {
+                        "iss": {
+                          "stringValue": "https://securetoken.google.com/firestore-emulator-example"
+                        },
+                        "aud": {
+                          "stringValue": "firestore-emulator-example"
+                        },
+                        "iat": {
+                          "intValue": "0"
+                        },
+                        "exp": {
+                          "intValue": "3600"
+                        },
+                        "auth_time": {
+                          "intValue": "0"
+                        },
+                        "sub": {
+                          "stringValue": "alice"
+                        },
+                        "user_id": {
+                          "stringValue": "alice"
+                        },
+                        "firebase": {
+                          "mapValue": {
+                            "fields": {
+                              "sign_in_provider": {
+                                "stringValue": "custom"
+                              },
+                              "identities": {
+                                "mapValue": {
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "count": 1
+          }],
+          "children": [{
+            "sourcePosition": {
+              "line": 5,
+              "column": 51,
+              "currentOffset": 167,
+              "endOffset": 173
+            },
+            "values": [{
+              "value": {
+              },
+              "count": 1
+            }, {
+              "value": {
+                "mapValue": {
+                  "fields": {
+                    "time": {
+                      "timestampValue": "2021-05-01T09:11:31.845Z"
+                    },
+                    "auth": {
+                      "mapValue": {
+                        "fields": {
+                          "uid": {
+                            "stringValue": "alice"
+                          },
+                          "token": {
+                            "mapValue": {
+                              "fields": {
+                                "iss": {
+                                  "stringValue": "https://securetoken.google.com/firestore-emulator-example"
+                                },
+                                "aud": {
+                                  "stringValue": "firestore-emulator-example"
+                                },
+                                "iat": {
+                                  "intValue": "0"
+                                },
+                                "exp": {
+                                  "intValue": "3600"
+                                },
+                                "auth_time": {
+                                  "intValue": "0"
+                                },
+                                "sub": {
+                                  "stringValue": "alice"
+                                },
+                                "user_id": {
+                                  "stringValue": "alice"
+                                },
+                                "firebase": {
+                                  "mapValue": {
+                                    "fields": {
+                                      "sign_in_provider": {
+                                        "stringValue": "custom"
+                                      },
+                                      "identities": {
+                                        "mapValue": {
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "headers": {
+                      "mapValue": {
+                      }
+                    },
+                    "inTransaction": {
+                      "boolValue": false
+                    },
+                    "path": {
+                      "pathValue": {
+                        "segments": [{
+                          "simple": "databases"
+                        }, {
+                          "simple": "(default)"
+                        }, {
+                          "simple": "documents"
+                        }, {
+                          "simple": "users"
+                        }, {
+                          "simple": "bob"
+                        }]
+                      }
+                    },
+                    "fields": {
+                      "nullValue": null
+                    },
+                    "method": {
+                      "stringValue": "get"
+                    }
+                  }
+                }
+              },
+              "count": 1
+            }]
+          }]
+        }]
+      }]
+    }]
+  }, {
+    "sourcePosition": {
+      "line": 8,
+      "column": 21,
+      "currentOffset": 253,
+      "endOffset": 272
+    },
+    "children": [{
+      "sourcePosition": {
+        "line": 8,
+        "column": 21,
+        "currentOffset": 253,
+        "endOffset": 264
+      },
+      "children": [{
+        "sourcePosition": {
+          "line": 8,
+          "column": 21,
+          "currentOffset": 253,
+          "endOffset": 259
+        }
+      }]
+    }]
+  }]
+}

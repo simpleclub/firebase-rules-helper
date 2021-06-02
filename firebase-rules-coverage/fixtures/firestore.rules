@@ -1,0 +1,11 @@
+service cloud.firestore {
+  match /databases/{database}/documents {
+  	// [FUNCTIONS END]
+  	match /users/{userId} {
+    	allow read: if request.auth.uid == userId || request.auth.uid == 'foo';
+    }
+  	match /articles/{articleId} {
+    	allow read: if request.auth != null;
+    }
+  }
+}
