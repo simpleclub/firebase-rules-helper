@@ -8,7 +8,7 @@
   "license": "BSD-3-Clause",
   "private": false,
   "bin": {
-    "firebase-rules-generator": "build/src/cli.js"
+    "firebase-rules-generator": "src/cli.js"
   },
   "engines": {
     "node": ">=12"
