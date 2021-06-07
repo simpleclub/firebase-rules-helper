@@ -17,16 +17,16 @@ See also [Firebase rules coverage] if you want to generate a test coverage repor
 
 ## Installation
 
-The `firebase-rules-generator` package is available on NPM (also GitHub Packages): 
+The `@simpleclub/firebase-rules-generator` package is available on NPM (also GitHub Packages): 
 
 ```shell
-$ npm install --save firebase-rules-generator
+$ npm install --save @simpleclub/firebase-rules-generator
 ```
 
 Via Yarn:
 
 ```shell
-$ yarn add firebase-rules-generator
+$ yarn add @simpleclub/firebase-rules-generator
 ```
 
 ## Usage

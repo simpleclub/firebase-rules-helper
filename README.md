@@ -7,7 +7,7 @@ This repo contains a collection of packages aimed to make working with Firebase 
 
 You can mix and match those packages as you wish.
 
-For example, you can only use `firebase-rules-coverage` to generate coverage reports, or only `firebase-rules-generator` to split your rules across different files.  
+For example, you can only use `@simpleclub/firebase-rules-coverage` to generate coverage reports, or only `@simpleclub/firebase-rules-generator` to split your rules across different files.  
 Or you can also split your rules across different files and then generate coverage reports on those files.
 
 ---
