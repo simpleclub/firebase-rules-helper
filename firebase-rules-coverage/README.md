@@ -16,16 +16,16 @@ This package aims to bridge this gap and converts the official Firebase test rep
 
 ## Installation
 
-The `firebase-rules-coverage` package is available on NPM (also GitHub Packages):
+The `@simpleclub/firebase-rules-coverage` package is available on NPM (also GitHub Packages):
 
 ```shell
-$ npm install --save firebase-rules-coverage
+$ npm install --save @simpleclub/firebase-rules-coverage
 ```
 
 Via Yarn:
 
 ```shell
-$ yarn add firebase-rules-coverage
+$ yarn add @simpleclub/firebase-rules-coverage
 ```
 
 ## Usage
