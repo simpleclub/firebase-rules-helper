@@ -4,7 +4,7 @@ import {
   CoverageResults,
   FirebaseRulesCoverage,
   FirebaseRulesCoverageBranch,
-} from './interfaces';
+} from './interfaces/index.js';
 import {SourceMapConsumer} from 'source-map';
 
 // todo: Firestore coverage reporting does not detect if: true/if: false statements, which might be critical for test coverage.

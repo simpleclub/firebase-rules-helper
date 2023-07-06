@@ -1,7 +1,7 @@
-import {generateLcovFile} from '../src';
+import {generateLcovFile} from '../src/index.js';
 import * as path from 'path';
 
-jest.mock('../src/convert');
+jest.mock('../src/convert.js');
 
 global.console = {
   ...global.console,
@@ -28,7 +28,7 @@ describe('CLI', () => {
         };
       });
     });
-    await import('../src/cli');
+    await import('../src/cli.js');
     expect(generateLcovFile).toBeCalledTimes(1);
     expect(generateLcovFile).toBeCalledWith(
       'fixtures/firestore-coverage.json',
@@ -51,7 +51,7 @@ describe('CLI', () => {
         };
       });
     });
-    await import('../src/cli');
+    await import('../src/cli.js');
 
     expect(generateLcovFile).toBeCalledTimes(0);
     expect(console.error).toBeCalledTimes(1);

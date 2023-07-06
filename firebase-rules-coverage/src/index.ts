@@ -1,1 +1,1 @@
-export {firebaseCoverageToLcov, generateLcovFile} from './convert';
+export {firebaseCoverageToLcov, generateLcovFile} from './convert.js';

@@ -1,5 +1,5 @@
 import * as fs from 'fs';
-import {firebaseCoverageToLcov, generateLcovFile} from '../src';
+import {firebaseCoverageToLcov, generateLcovFile} from '../src/index.js';
 
 const expectedLcovOutput = `TN:
 SF:fixtures/firestore.rules
