@@ -24,9 +24,11 @@ global.console = {
 
 describe('generate lcov file', () => {
   afterEach(() => {
-    fs.rmdirSync('fixtures/coverage', {
-      recursive: true,
-    });
+    if (fs.existsSync('fixtures/coverage')) {
+      fs.rmSync('fixtures/coverage', {
+        recursive: true,
+      });
+    }
   });
 
   it('should generate an lcov file', async () => {
