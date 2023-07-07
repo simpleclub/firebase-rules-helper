@@ -1,8 +1,9 @@
 # @simpleclub/firebase-rules-coverage
 
-## 0.1.2
+## 1.0.0
 
 - Updates dependencies. It switches to ESM (type: "module")
+- **Breaking**: It requires Node.js version 16 or higher
 
 ## 0.1.1
 
