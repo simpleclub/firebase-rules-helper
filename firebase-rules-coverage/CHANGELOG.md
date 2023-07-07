@@ -1,5 +1,9 @@
 # @simpleclub/firebase-rules-coverage
 
+## 0.1.2
+
+- Updates dependencies. It switches to ESM (type: "module")
+
 ## 0.1.1
 
 - Fixes command `firebase-build-coverage` not being added to the project after installation.
