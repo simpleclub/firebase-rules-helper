@@ -26,17 +26,17 @@ const cli = meow(
     flags: {
       projectRoot: {
         type: 'string',
-        aliases: ['p'],
+        shortFlag: 'p',
         default: '.',
       },
       rulesFile: {
         type: 'string',
-        alias: 'r',
+        shortFlag: 'r',
         isRequired: true,
       },
       output: {
         type: 'string',
-        alias: 'o',
+        shortFlag: 'o',
         isRequired: true,
       },
     },
