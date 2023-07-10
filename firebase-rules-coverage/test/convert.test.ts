@@ -1,3 +1,4 @@
+import {jest} from '@jest/globals';
 import * as fs from 'fs';
 import {firebaseCoverageToLcov, generateLcovFile} from '../src/index.js';
 

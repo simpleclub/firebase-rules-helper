@@ -9,7 +9,7 @@ const config: JestConfigWithTsJest = {
   testEnvironment: 'node',
   testRegex: '(/__tests__/.*|(\\.|/)(test))\\.[jt]sx?$',
   transform: {
-    '^.+\\.(ts|tsx)$': ['ts-jest', {useESM: true}],
+    '^.+\\.(mt|t|cj|j)s$': ['ts-jest', {useESM: true}],
   },
   collectCoverage: true,
   collectCoverageFrom: ['src/**/*.ts'],

@@ -22,8 +22,9 @@
     "prepare": "npm run compile",
     "pretest": "npm run compile",
     "posttest": "npm run lint",
-    "test": "jest --runInBand",
-    "test:dev": "jest --runInBand --watch",
+    "test": "NODE_OPTIONS=\"--experimental-vm-modules\" jest --runInBand",
+    "test:dev": "NODE_OPTIONS=\"--experimental-vm-modules\" jest --runInBand --watch",
+    "test:debug": "node --experimental-vm-modules --inspect-brk node_modules/.bin/jest --silent --runInBand --watch",
     "release": "yarn clean && yarn compile && cp package.json ./build && cp README.md ./build && cp CHANGELOG.md ./build && yarn publish ./build"
   },
   "dependencies": {
@@ -31,6 +32,7 @@
     "source-map": "^0.7.3"
   },
   "devDependencies": {
+    "@jest/globals": "^29.6.1",
     "@types/jest": "^29.5.2",
     "@types/node": "^15.6.1",
     "gts": "^3.1.0",
