@@ -3,9 +3,13 @@ on:
   pull_request:
     branches:
       - main
+    paths:
+      - 'firebase-rules-generator/**'
   push:
     branches:
       - main
+    paths:
+      - 'firebase-rules-generator/**'
 
 jobs:
   lint:
@@ -14,11 +18,12 @@ jobs:
     strategy:
       matrix:
         package:
-          - 'firebase-rules-coverage'
           - 'firebase-rules-generator'
         node_version:
           - '12'
           - '14'
+          - '16'
+          - '18'
       fail-fast: false
     steps:
       - uses: actions/checkout@v2
@@ -38,11 +43,12 @@ jobs:
     strategy:
       matrix:
         package:
-          - 'firebase-rules-coverage'
           - 'firebase-rules-generator'
         node_version:
           - '12'
           - '14'
+          - '16'
+          - '18'
       fail-fast: false
     steps:
       - uses: actions/checkout@v2

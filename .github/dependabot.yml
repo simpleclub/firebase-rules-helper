@@ -11,10 +11,6 @@ updates:
       interval: "daily"
     reviewers:
       - IchordeDionysos
-    ignore:
-      - dependency-name: "meow"
-        # Ignore meow 10.x for now as jest does not work properly with ES modules yet.
-        versions: [ "10.x" ]
   - package-ecosystem: "npm"
     directory: "/firebase-rules-generator"
     schedule:
