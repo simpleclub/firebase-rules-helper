@@ -9,24 +9,22 @@ global.console = {
 
 describe('build file', () => {
   afterEach(() => {
-    fs.rmdirSync('fixtures/output', {
-      recursive: true,
-    });
+    if (fs.existsSync('fixtures/output')) {
+      fs.rmSync('fixtures/output', {
+        recursive: true,
+      });
+    }
   });
 
-  it('should generate a rules file', async () => {
-    await buildFile(
-      'fixtures/index.rules',
-      'fixtures/output/firestore.rules',
-      false
-    );
+  it('should generate a rules file', () => {
+    buildFile('fixtures/index.rules', 'fixtures/output/firestore.rules', false);
     expect(
       fs.readFileSync('fixtures/output/firestore.rules').toString()
     ).toEqual(fs.readFileSync('fixtures/firestore.rules').toString());
   });
 
-  it('should generate a source map file', async () => {
-    await buildFile('fixtures/index.rules', 'fixtures/output/firestore.rules');
+  it('should generate a source map file', () => {
+    buildFile('fixtures/index.rules', 'fixtures/output/firestore.rules');
     expect(
       fs.readFileSync('fixtures/output/firestore.rules.map').toString()
     ).toEqual(fs.readFileSync('fixtures/firestore.rules.map').toString());
@@ -35,9 +33,11 @@ describe('build file', () => {
 
 describe('resolve imports', () => {
   afterEach(() => {
-    fs.rmdirSync('fixtures/output', {
-      recursive: true,
-    });
+    if (fs.existsSync('fixtures/output')) {
+      fs.rmSync('fixtures/output', {
+        recursive: true,
+      });
+    }
   });
 
   it('should resolve imports', () => {
