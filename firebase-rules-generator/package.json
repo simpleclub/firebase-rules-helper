@@ -12,7 +12,7 @@
     "firebase-rules-generator": "src/cli.js"
   },
   "engines": {
-    "node": ">=12"
+    "node": ">=16"
   },
   "scripts": {
     "lint": "gts lint",
