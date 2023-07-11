@@ -2,7 +2,10 @@
   "extends": "./node_modules/gts/tsconfig-google.json",
   "compilerOptions": {
     "rootDir": ".",
-    "outDir": "build"
+    "outDir": "build",
+    "module": "node16",
+    "target": "es2020",
+    "moduleResolution": "Node16"
   },
   "include": [
     "src/**/*.ts",

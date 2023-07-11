@@ -1,5 +1,6 @@
+import {jest} from '@jest/globals';
 import * as fs from 'fs';
-import {buildFile, resolveImports} from '../src';
+import {buildFile, resolveImports} from '../src/index.js';
 import {SourceMapGenerator} from 'source-map';
 
 global.console = {

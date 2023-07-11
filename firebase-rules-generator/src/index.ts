@@ -1,1 +1,1 @@
-export {resolveImports, buildFile} from './build';
+export {resolveImports, buildFile} from './build.js';
