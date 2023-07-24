@@ -1,0 +1,81 @@
+# Because new version of firebase-rules-coverage only works
+# with Node 16, we can't have the same checks as for the firebase-rules-generator.
+name: Lints & Tests
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'firebase-rules-coverage/**'
+  push:
+    branches:
+      - main
+    paths:
+      - 'firebase-rules-coverage/**'
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    name: ${{ matrix.package }} lints on Node ${{ matrix.node_version }}
+    strategy:
+      matrix:
+        package:
+          - 'firebase-rules-coverage'
+        node_version:
+          - '16'
+          - '18'
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node_version }}
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+        working-directory: ${{ matrix.package }}
+      - name: Run ESLint
+        run: yarn lint
+        working-directory: ${{ matrix.package }}
+  
+  test:
+    runs-on: ubuntu-latest
+    name: ${{ matrix.package }} tests on Node ${{ matrix.node_version }}
+    strategy:
+      matrix:
+        package:
+          - 'firebase-rules-coverage'
+        node_version:
+          - '16'
+          - '18'
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node_version }}
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+        working-directory: ${{ matrix.package }}
+      - name: Run tests
+        run: yarn test
+        working-directory: ${{ matrix.package }}
+      - name: Report coverage
+        if: ${{ success() || failure() }}
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.github_token }}
+          flag-name: ${{ matrix.package }}-node-${{ matrix.node_version }}
+          parallel: true
+          path-to-lcov: './${{ matrix.package }}/coverage/lcov.info'
+
+  finish:
+    needs: test
+    runs-on: ubuntu-latest
+    if: ${{ success() || failure() }}
+    steps:
+    - name: Finalize coverage reporting
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.github_token }}
+
+        parallel-finished: true

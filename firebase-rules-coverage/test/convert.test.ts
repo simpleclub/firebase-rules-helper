@@ -1,5 +1,6 @@
+import {jest} from '@jest/globals';
 import * as fs from 'fs';
-import {firebaseCoverageToLcov, generateLcovFile} from '../src';
+import {firebaseCoverageToLcov, generateLcovFile} from '../src/index.js';
 
 const expectedLcovOutput = `TN:
 SF:fixtures/firestore.rules
@@ -24,9 +25,11 @@ global.console = {
 
 describe('generate lcov file', () => {
   afterEach(() => {
-    fs.rmdirSync('fixtures/coverage', {
-      recursive: true,
-    });
+    if (fs.existsSync('fixtures/coverage')) {
+      fs.rmSync('fixtures/coverage', {
+        recursive: true,
+      });
+    }
   });
 
   it('should generate an lcov file', async () => {

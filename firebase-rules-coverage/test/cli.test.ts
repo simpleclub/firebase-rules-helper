@@ -1,7 +1,8 @@
-import {generateLcovFile} from '../src';
+import {jest} from '@jest/globals';
 import * as path from 'path';
 
-jest.mock('../src/convert');
+type TestedModule = typeof import('../src/convert.js');
+let generateLcovFile: TestedModule['generateLcovFile'] | jest.Mock;
 
 global.console = {
   ...global.console,
@@ -9,6 +10,13 @@ global.console = {
 };
 
 describe('CLI', () => {
+  beforeEach(async () => {
+    jest.unstable_mockModule('../src/convert.js', () => ({
+      generateLcovFile: jest.fn(),
+    }));
+    const module = await import('../src/convert.js');
+    generateLcovFile = module.generateLcovFile;
+  });
   afterEach(() => {
     jest.resetModules();
     (generateLcovFile as jest.Mock).mockClear();
@@ -16,19 +24,21 @@ describe('CLI', () => {
   });
 
   it('should call generate lcov file', async () => {
-    jest.mock('meow', () => {
-      return jest.fn().mockImplementation(() => {
-        return {
-          input: ['fixtures/firestore-coverage.json'],
-          flags: {
-            projectRoot: '.',
-            rulesFile: 'fixtures/firestore.rules',
-            output: 'coverage',
-          },
-        };
-      });
+    jest.unstable_mockModule('meow', () => {
+      return {
+        default: jest.fn().mockImplementation(() => {
+          return {
+            input: ['fixtures/firestore-coverage.json'],
+            flags: {
+              projectRoot: '.',
+              rulesFile: 'fixtures/firestore.rules',
+              output: 'coverage',
+            },
+          };
+        }),
+      };
     });
-    await import('../src/cli');
+    await import('../src/cli.js');
     expect(generateLcovFile).toBeCalledTimes(1);
     expect(generateLcovFile).toBeCalledWith(
       'fixtures/firestore-coverage.json',
@@ -39,19 +49,21 @@ describe('CLI', () => {
   });
 
   it('fails without input', async () => {
-    jest.mock('meow', () => {
-      return jest.fn().mockImplementation(() => {
-        return {
-          input: [],
-          flags: {
-            projectRoot: '.',
-            rulesFile: 'fixtures/firestore.rules',
-            output: 'coverage',
-          },
-        };
-      });
+    jest.unstable_mockModule('meow', () => {
+      return {
+        default: jest.fn().mockImplementation(() => {
+          return {
+            input: [],
+            flags: {
+              projectRoot: '.',
+              rulesFile: 'fixtures/firestore.rules',
+              output: 'coverage',
+            },
+          };
+        }),
+      };
     });
-    await import('../src/cli');
+    await import('../src/cli.js');
 
     expect(generateLcovFile).toBeCalledTimes(0);
     expect(console.error).toBeCalledTimes(1);

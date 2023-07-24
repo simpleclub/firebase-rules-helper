@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-import * as meow from 'meow';
+import meow from 'meow';
 import * as path from 'path';
-import {generateLcovFile} from './convert';
+import {generateLcovFile} from './convert.js';
 
 const cli = meow(
   `
@@ -22,20 +22,21 @@ const cli = meow(
 	  $ firebase-rules-coverage storage-coverage.json --rules-file storage.rules --output coverage
 `,
   {
+    importMeta: import.meta,
     flags: {
       projectRoot: {
         type: 'string',
-        alias: 'p',
+        shortFlag: 'p',
         default: '.',
       },
       rulesFile: {
         type: 'string',
-        alias: 'r',
+        shortFlag: 'r',
         isRequired: true,
       },
       output: {
         type: 'string',
-        alias: 'o',
+        shortFlag: 'o',
         isRequired: true,
       },
     },
