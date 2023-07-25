@@ -1,8 +1,5 @@
 import {jest} from '@jest/globals';
-// import {buildFile} from '../src/index.js';
 import * as path from 'path';
-
-// jest.mock('../src/build');
 
 type TestedModule = typeof import('../src/build.js');
 let buildFile: TestedModule['buildFile'] | jest.Mock;
