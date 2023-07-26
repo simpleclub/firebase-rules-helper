@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-import * as meow from 'meow';
+import meow from 'meow';
 import * as path from 'path';
-import {buildFile} from './build';
+import {buildFile} from './build.js';
 
 const cli = meow(
   `
@@ -18,15 +18,16 @@ const cli = meow(
 	  $ firebase-build-rules rules/index.rules --no-source-map --output storage.rules
 `,
   {
+    importMeta: import.meta,
     flags: {
       output: {
         type: 'string',
-        alias: 'o',
+        shortFlag: 'o',
         isRequired: true,
       },
       sourceMap: {
         type: 'boolean',
-        alias: 's',
+        shortFlag: 's',
         default: true,
       },
     },
