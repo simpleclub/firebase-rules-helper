@@ -1,0 +1,26 @@
+name: '@simpleclub/firebase-rules-coverage'
+id: 'ari:cloud:compass:8072ec69-bd2f-4082-a110-02e57b2c244d:component/ec01753c-527e-446d-905a-af54f87f04a0/3929827f-0611-4a15-af0f-3f9a18fa2c86'
+description: A package to track test coverage of your Firestore security rules.
+configVersion: 1
+typeId: LIBRARY
+ownerId: 'ari:cloud:teams::team/8a6af455-d773-4bdf-a4ad-4f62116b1830'
+fields:
+  lifecycle: Active
+  tier: 4
+links: []
+relationships: {}
+labels:
+  - 'language:typescript'
+customFields:
+  - name: Automated Dependency Updates
+    type: single_select
+    value: e4bc4c36-7d3e-470a-98d0-36a2894757e6 # Manual
+  - name: Automated Releases
+    type: single_select
+    value: b05320ef-1ef9-4314-baa6-7ff897d67da2 # Manual
+  - name: NodeJS Version
+    type: number
+    value: 20
+
+# Learn more about formatting compass.yml:
+# https://go.atlassian.com/compass-yml-format
