@@ -1186,7 +1186,7 @@ __metadata:
   dependencies:
     "@jest/globals": "npm:^29.7.0"
     "@types/jest": "npm:^29.5.12"
-    "@types/node": "npm:^15.14.9"
+    "@types/node": "npm:^16.18.97"
     gts: "npm:^5.3.0"
     jest: "npm:^29.7.0"
     meow: "npm:^13.2.0"
@@ -1358,10 +1358,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^15.14.9":
-  version: 15.14.9
-  resolution: "@types/node@npm:15.14.9"
-  checksum: 10c0/fe5b69cffd20f97c814d568c1d791b3c367f9efa6567a18d2c15cd73c5437f47bcff73a2e10bdfe59f90ce7df47e6cc3c6d431c76d2213bf6099e8ab5d16d355
+"@types/node@npm:^16.18.97":
+  version: 16.18.97
+  resolution: "@types/node@npm:16.18.97"
+  checksum: 10c0/5c2898309e5c14576ec7e5c727de528d05d48feb588f975148dd292268b8f7f539a662bea152dbeb9c3ec83c3bbe4a6c066e867b52712bde36bd241e39e2f86e
   languageName: node
   linkType: hard
 

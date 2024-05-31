@@ -7,10 +7,7 @@
   "repository": "https://github.com/simpleclub/firebase-rules-helper",
   "author": "simpleclub GmbH",
   "license": "BSD-3-Clause",
-  "private": false,
-  "bin": {
-    "firebase-rules-generator": "src/cli.js"
-  },
+  "bin": "src/cli.js",
   "engines": {
     "node": ">=16"
   },
@@ -33,7 +30,7 @@
   "devDependencies": {
     "@jest/globals": "^29.7.0",
     "@types/jest": "^29.5.12",
-    "@types/node": "^15.14.9",
+    "@types/node": "^16.18.97",
     "gts": "^5.3.0",
     "jest": "^29.7.0",
     "ts-jest": "^29.1.4",
