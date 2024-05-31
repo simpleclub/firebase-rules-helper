@@ -24,7 +24,7 @@
     "release": "yarn clean && yarn compile && cp package.json ./build && cp README.md ./build && cp CHANGELOG.md ./build && yarn publish ./build"
   },
   "dependencies": {
-    "meow": "^13.2.0",
+    "meow": "~12.1.1",
     "source-map": "^0.7.4"
   },
   "devDependencies": {
