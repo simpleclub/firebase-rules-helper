@@ -28,11 +28,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Install dependencies
-        run:
-          |
-          corepack enable
-          yarn -v
-          yarn install --cwd ${{ env.workdir }} --frozen-lockfile
+        run: yarn install --cwd ${{ env.workdir }} --frozen-lockfile
 
       - name: Publish package to NPM
         run: yarn --cwd ${{ env.workdir }} release --access public

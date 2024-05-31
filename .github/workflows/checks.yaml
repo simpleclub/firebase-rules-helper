@@ -26,11 +26,7 @@ jobs:
         with:
           node-version: ${{ matrix.node_version }}
       - name: Install dependencies
-        run:
-          |
-          corepack enable
-          yarn -v
-          yarn install --frozen-lockfile
+        run: yarn install --frozen-lockfile
         working-directory: ${{ matrix.package }}
       - name: Run ESLint
         run: yarn lint
@@ -54,11 +50,7 @@ jobs:
         with:
           node-version: ${{ matrix.node_version }}
       - name: Install dependencies
-        run:
-          |
-          corepack enable
-          yarn -v
-          yarn install --frozen-lockfile
+        run: yarn install --frozen-lockfile
         working-directory: ${{ matrix.package }}
       - name: Run tests
         run: yarn test
