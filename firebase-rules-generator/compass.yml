@@ -1,4 +1,4 @@
-name: '@simpleclub/firebase-rules-generator'
+name: backend - package - firebase-rules-generator
 id: 'ari:cloud:compass:8072ec69-bd2f-4082-a110-02e57b2c244d:component/ec01753c-527e-446d-905a-af54f87f04a0/43bd7074-0ea8-4474-8bbd-61964a6044e6'
 description: A package to split your Firebase security rules into smaller composable files and generate a single output file.
 configVersion: 1
