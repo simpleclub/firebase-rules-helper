@@ -1,4 +1,4 @@
-name: '@simpleclub/firebase-rules-coverage'
+name: backend - package - firebase-rules-coverage
 id: 'ari:cloud:compass:8072ec69-bd2f-4082-a110-02e57b2c244d:component/ec01753c-527e-446d-905a-af54f87f04a0/3929827f-0611-4a15-af0f-3f9a18fa2c86'
 description: A package to track test coverage of your Firestore security rules.
 configVersion: 1
