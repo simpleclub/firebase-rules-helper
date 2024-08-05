@@ -9,7 +9,7 @@
   "license": "BSD-3-Clause",
   "bin": "src/cli.js",
   "engines": {
-    "node": ">=16"
+    "node": ">=18"
   },
   "scripts": {
     "lint": "gts lint",
