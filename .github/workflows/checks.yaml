@@ -17,7 +17,6 @@ jobs:
           - 'firebase-rules-coverage'
           - 'firebase-rules-generator'
         node_version:
-          - '16'
           - '18'
       fail-fast: false
     steps:
@@ -41,7 +40,6 @@ jobs:
           - 'firebase-rules-coverage'
           - 'firebase-rules-generator'
         node_version:
-          - '16'
           - '18'
       fail-fast: false
     steps:
