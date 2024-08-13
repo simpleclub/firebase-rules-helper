@@ -18,6 +18,8 @@ jobs:
           - 'firebase-rules-generator'
         node_version:
           - '18'
+          - '20'
+          - '22'
       fail-fast: false
     steps:
       - uses: actions/checkout@v2
