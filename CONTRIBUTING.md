@@ -50,6 +50,6 @@ In order for us to review and merge your code, please follow the link and sign t
 [create pr]: https://help.github.com/en/articles/creating-a-pull-request-from-a-fork
 [GitHub hub]: https://hub.github.com
 [ssh key]: https://help.github.com/articles/generating-ssh-keys
-[CLA]: https://simpleclub.page.link/cla
+[CLA]: https://bit.ly/simpleclub-cla
 [versioning]: https://semver.org/
 [yarn]: https://classic.yarnpkg.com/en/docs/install/
