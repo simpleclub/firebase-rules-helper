@@ -1,6 +1,6 @@
 {
   "name": "@simpleclub/firebase-rules-generator",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
   "description": "Helper package for building more complex Firebase rules with support for imports.",
   "main": "build/src/index.js",
