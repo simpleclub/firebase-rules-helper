@@ -1,7 +1,7 @@
 {
   "name": "@simpleclub/firebase-rules-coverage",
   "type": "module",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Analyze Firebase rules coverage data to covert it to LCOV.",
   "main": "build/src/index.js",
   "repository": {
