@@ -4,7 +4,11 @@
   "type": "module",
   "description": "Helper package for building more complex Firebase rules with support for imports.",
   "main": "build/src/index.js",
-  "repository": "https://github.com/simpleclub/firebase-rules-helper",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simpleclub/firebase-rules-helper.git",
+    "directory": "firebase-rules-generator"
+  },
   "author": "simpleclub GmbH",
   "license": "BSD-3-Clause",
   "bin": "src/cli.js",
