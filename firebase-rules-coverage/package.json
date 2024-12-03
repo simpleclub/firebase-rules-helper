@@ -1,10 +1,14 @@
 {
   "name": "@simpleclub/firebase-rules-coverage",
   "type": "module",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Analyze Firebase rules coverage data to covert it to LCOV.",
   "main": "build/src/index.js",
-  "repository": "https://github.com/simpleclub/firebase-rules-helper",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simpleclub/firebase-rules-helper.git",
+    "directory": "firebase-rules-coverage"
+  },
   "author": "simpleclub GmbH",
   "license": "BSD-3-Clause",
   "bin": "src/cli.js",
