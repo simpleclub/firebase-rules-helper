@@ -44,7 +44,7 @@ describe('CLI', () => {
       'fixtures/firestore-coverage.json',
       path.resolve('.'),
       path.resolve('fixtures/firestore.rules'),
-      'coverage'
+      'coverage',
     );
   });
 

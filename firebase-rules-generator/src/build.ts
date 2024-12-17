@@ -12,7 +12,7 @@ export function resolveImports(
   map: SourceMapGenerator,
   filePath: string,
   line = 1,
-  column = 0
+  column = 0,
 ): ResolveResult {
   const rulesFile = fs.readFileSync(filePath).toString();
   // Every second element in the array will have the file name to the imported file
@@ -31,7 +31,7 @@ export function resolveImports(
         map,
         importPath,
         generatedLine,
-        generatedColumn
+        generatedColumn,
       );
       resolvedRulesFile += result.content;
       generatedLine = result.line;
@@ -46,7 +46,7 @@ export function resolveImports(
         generatedLine,
         generatedColumn,
         originalLine,
-        originalColumn
+        originalColumn,
       );
       generatedLine = updated.generatedLine;
       generatedColumn = updated.generatedColumn;
@@ -69,7 +69,7 @@ function generateSourceMap(
   generatedLine: number,
   generatedColumn: number,
   originalLine: number,
-  originalColumn: number
+  originalColumn: number,
 ): {
   generatedLine: number;
   generatedColumn: number;
@@ -117,7 +117,7 @@ export function buildFile(srcPath: string, destPath: string, sourceMap = true) {
   if (sourceMap) {
     fs.writeFileSync(
       path.join(path.dirname(destPath), path.basename(destPath) + '.map'),
-      map.toString()
+      map.toString(),
     );
   }
 }

@@ -20,14 +20,14 @@ describe('build file', () => {
   it('should generate a rules file', () => {
     buildFile('fixtures/index.rules', 'fixtures/output/firestore.rules', false);
     expect(
-      fs.readFileSync('fixtures/output/firestore.rules').toString()
+      fs.readFileSync('fixtures/output/firestore.rules').toString(),
     ).toEqual(fs.readFileSync('fixtures/firestore.rules').toString());
   });
 
   it('should generate a source map file', () => {
     buildFile('fixtures/index.rules', 'fixtures/output/firestore.rules');
     expect(
-      fs.readFileSync('fixtures/output/firestore.rules.map').toString()
+      fs.readFileSync('fixtures/output/firestore.rules.map').toString(),
     ).toEqual(fs.readFileSync('fixtures/firestore.rules.map').toString());
   });
 });
@@ -47,7 +47,7 @@ describe('resolve imports', () => {
     });
     const result = resolveImports(map, 'fixtures/index.rules');
     expect(result.content).toEqual(
-      fs.readFileSync('fixtures/firestore.rules').toString()
+      fs.readFileSync('fixtures/firestore.rules').toString(),
     );
   });
 });

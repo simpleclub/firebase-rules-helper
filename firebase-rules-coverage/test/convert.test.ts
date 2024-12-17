@@ -37,10 +37,10 @@ describe('generate lcov file', () => {
       'fixtures/firestore-coverage.json',
       '.',
       'fixtures/firestore.rules',
-      'fixtures/coverage'
+      'fixtures/coverage',
     );
     expect(fs.readFileSync('fixtures/coverage/lcov.info').toString()).toEqual(
-      expectedLcovOutput
+      expectedLcovOutput,
     );
   });
 
@@ -49,11 +49,11 @@ describe('generate lcov file', () => {
       'fixtures/firestore-coverage.json',
       '.',
       'fixtures/non-existing.rules',
-      'fixtures/coverage'
+      'fixtures/coverage',
     );
     expect(console.error).toBeCalledTimes(1);
     expect(console.error).toBeCalledWith(
-      'Rules file does not exist at location fixtures/non-existing.rules.'
+      'Rules file does not exist at location fixtures/non-existing.rules.',
     );
     expect(fs.existsSync('fixtures/coverage/lcov.info')).toBe(false);
   });
@@ -62,12 +62,12 @@ describe('generate lcov file', () => {
 describe('firebase coverage to lcov', () => {
   it('should generate an lcov file', () => {
     const rulesCoverage = JSON.parse(
-      fs.readFileSync('fixtures/firestore-coverage.json').toString()
+      fs.readFileSync('fixtures/firestore-coverage.json').toString(),
     );
     const lcov = firebaseCoverageToLcov(
       '.',
       'fixtures/firestore.rules',
-      rulesCoverage
+      rulesCoverage,
     );
     expect(lcov).toEqual(expectedLcovOutput);
     expect(lcov.length).toBeGreaterThan(0);

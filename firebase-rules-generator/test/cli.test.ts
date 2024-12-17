@@ -42,7 +42,7 @@ describe('CLI', () => {
     expect(buildFile).toBeCalledWith(
       path.resolve('fixtures/index.rules'),
       path.resolve('fixtures/output/firestore.rules'),
-      true
+      true,
     );
   });
 

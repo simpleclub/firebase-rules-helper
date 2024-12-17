@@ -31,21 +31,21 @@ const cli = meow(
         default: true,
       },
     },
-  }
+  },
 );
 
 function run(srcFile: string | undefined) {
   if (!srcFile) {
     console.error(
       `Missing required <input>
-   Use: firebase-build-rules <input>`
+   Use: firebase-build-rules <input>`,
     );
     return;
   }
   buildFile(
     path.resolve(srcFile),
     path.resolve(cli.flags.output),
-    cli.flags.sourceMap
+    cli.flags.sourceMap,
   );
 }
 

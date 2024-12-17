@@ -17,7 +17,7 @@ export async function generateLcovFile(
   coverageFile: string,
   projectDir: string,
   rulesFile: string,
-  outputDir: string
+  outputDir: string,
 ) {
   const rulesCoverage = JSON.parse(fs.readFileSync(coverageFile).toString());
 
@@ -38,7 +38,7 @@ export async function generateLcovFile(
     projectDir,
     rulesFile,
     rulesCoverage,
-    sourceMap
+    sourceMap,
   );
   const lcovFilePath = path.join(outputDir, 'lcov.info');
   fs.mkdirSync(path.dirname(lcovFilePath), {recursive: true});
@@ -49,7 +49,7 @@ export function firebaseCoverageToLcov(
   projectDir: string,
   rulesFile: string,
   rulesCoverage: FirebaseRulesCoverage,
-  sourceMap?: SourceMapConsumer
+  sourceMap?: SourceMapConsumer,
 ): string {
   let coverageResult: CoverageResults = {
     files: {},
@@ -62,8 +62,8 @@ export function firebaseCoverageToLcov(
         projectDir,
         rulesFile,
         rulesCoverage.rules.files[0].content,
-        sourceMap
-      )
+        sourceMap,
+      ),
     );
   }
 
@@ -71,7 +71,7 @@ export function firebaseCoverageToLcov(
   lcovFileLines.push('TN:');
 
   for (const [file, coverageFileResult] of Object.entries(
-    coverageResult.files
+    coverageResult.files,
   )) {
     lcovFileLines.push(`SF:${file}`);
 
@@ -86,14 +86,14 @@ export function firebaseCoverageToLcov(
     let branchesFound = 0;
     let branchesCovered = 0;
     for (const [branchKey, coverage] of Object.entries(
-      coverageFileResult.branches
+      coverageFileResult.branches,
     )) {
       let i = 0;
       for (const branch of coverage) {
         branchesFound++;
         if (branch.count > 0) branchesCovered++;
         lcovFileLines.push(
-          'BRDA:' + [branch.line, branchKey, i, branch.count].join(',')
+          'BRDA:' + [branch.line, branchKey, i, branch.count].join(','),
         );
         i++;
       }
@@ -117,7 +117,7 @@ function getBranchCoverage(
   rulesFile: string,
   ruleFileContent: string,
   sourceMap: SourceMapConsumer | undefined,
-  branchKey = 0
+  branchKey = 0,
 ): CoverageResults {
   let results: CoverageResults = {
     files: {},
@@ -131,7 +131,7 @@ function getBranchCoverage(
       line: branch.sourcePosition.line,
       column: getLineColumnForFileOffset(
         ruleFileContent,
-        branch.sourcePosition.currentOffset
+        branch.sourcePosition.currentOffset,
       ),
     });
     if (originalPosition.source === null || originalPosition.line === null) {
@@ -156,8 +156,8 @@ function getBranchCoverage(
           rulesFile,
           ruleFileContent,
           sourceMap,
-          branchKey++
-        )
+          branchKey++,
+        ),
       );
     }
   } else if (branch.values) {
@@ -175,7 +175,7 @@ function getBranchCoverage(
 
 function mergeCoverageResults(
   first: CoverageResults,
-  second: CoverageResults
+  second: CoverageResults,
 ): CoverageResults {
   let results: CoverageResults = {
     files: {},
@@ -193,7 +193,7 @@ function mergeCoverageResults(
           file,
           branch.line,
           parseInt(branchKey),
-          branch.count
+          branch.count,
         );
       }
     }
@@ -211,7 +211,7 @@ function mergeCoverageResults(
           file,
           branch.line,
           parseInt(branchKey),
-          branch.count
+          branch.count,
         );
       }
     }
@@ -224,7 +224,7 @@ function addLineCoverage(
   results: CoverageResults,
   file: string,
   line: number,
-  count: number
+  count: number,
 ): CoverageResults {
   if (!results.files[file]) {
     results.files[file] = {
@@ -245,7 +245,7 @@ function addBranchCoverage(
   file: string,
   line: number,
   key: number,
-  count: number
+  count: number,
 ): CoverageResults {
   if (!results.files[file]) {
     results.files[file] = {
@@ -263,7 +263,7 @@ function addBranchCoverage(
 
 function getLineColumnForFileOffset(
   ruleFileContent: string,
-  offset: number
+  offset: number,
 ): number {
   return ruleFileContent.substr(0, offset).split('\n').pop()?.length ?? 0;
 }
