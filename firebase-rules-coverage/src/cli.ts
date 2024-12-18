@@ -40,14 +40,14 @@ const cli = meow(
         isRequired: true,
       },
     },
-  }
+  },
 );
 
 async function run(srcFile: string | undefined) {
   if (!srcFile) {
     console.error(
       `Missing required <input>
-   Use: firebase-rules-coverage <input>`
+   Use: firebase-rules-coverage <input>`,
     );
     return;
   }
@@ -56,7 +56,7 @@ async function run(srcFile: string | undefined) {
     srcFile,
     path.resolve(projectRoot),
     path.resolve(cli.flags.rulesFile),
-    cli.flags.output
+    cli.flags.output,
   );
 }
 
