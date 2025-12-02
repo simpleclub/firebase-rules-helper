@@ -30,16 +30,16 @@
   },
   "dependencies": {
     "meow": "~13.2.0",
-    "source-map": "^0.7.4"
+    "source-map": "^0.7.6"
   },
   "devDependencies": {
     "@jest/globals": "^29.7.0",
     "@types/jest": "^29.5.14",
-    "@types/node": "^22.10.2",
+    "@types/node": "^22.19.1",
     "gts": "6.0.2",
     "jest": "^29.7.0",
-    "ts-jest": "^29.2.5",
+    "ts-jest": "^29.4.6",
     "ts-node": "^10.9.2",
-    "typescript": "~5.7.2"
+    "typescript": "~5.7.3"
   }
 }
