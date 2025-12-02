@@ -51,8 +51,8 @@ describe('generate lcov file', () => {
       'fixtures/non-existing.rules',
       'fixtures/coverage',
     );
-    expect(console.error).toBeCalledTimes(1);
-    expect(console.error).toBeCalledWith(
+    expect(console.error).toHaveBeenCalledTimes(1);
+    expect(console.error).toHaveBeenCalledWith(
       'Rules file does not exist at location fixtures/non-existing.rules.',
     );
     expect(fs.existsSync('fixtures/coverage/lcov.info')).toBe(false);
