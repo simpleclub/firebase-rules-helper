@@ -4,7 +4,6 @@
 
 - Upgrade dependencies to fix security vulnerabilities (js-yaml, tmp)
 - Upgrade to Jest 30
-- Upgrade meow to v14
 
 ## 1.0.0
 
