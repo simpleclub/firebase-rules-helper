@@ -1,5 +1,10 @@
 # @simpleclub/firebase-rules-coverage
 
+## 1.1.0
+
+- Upgrade dependencies to fix security vulnerabilities (js-yaml, tmp)
+- Upgrade to Jest 30
+
 ## 1.0.0
 
 - Updates dependencies. It switches to ESM (type: "module")

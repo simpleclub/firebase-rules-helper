@@ -6,7 +6,7 @@
     "module": "node16",
     "target": "es2020",
     "moduleResolution": "node16",
-    "types": [ "jest" ]
+    "types": [ "jest", "node" ]
   },
   "include": [
     "src/**/*.ts",

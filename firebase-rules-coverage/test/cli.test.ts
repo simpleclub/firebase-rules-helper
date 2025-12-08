@@ -39,8 +39,8 @@ describe('CLI', () => {
       };
     });
     await import('../src/cli.js');
-    expect(generateLcovFile).toBeCalledTimes(1);
-    expect(generateLcovFile).toBeCalledWith(
+    expect(generateLcovFile).toHaveBeenCalledTimes(1);
+    expect(generateLcovFile).toHaveBeenCalledWith(
       'fixtures/firestore-coverage.json',
       path.resolve('.'),
       path.resolve('fixtures/firestore.rules'),
@@ -65,9 +65,9 @@ describe('CLI', () => {
     });
     await import('../src/cli.js');
 
-    expect(generateLcovFile).toBeCalledTimes(0);
-    expect(console.error).toBeCalledTimes(1);
-    expect(console.error).toBeCalledWith(`Missing required <input>
+    expect(generateLcovFile).toHaveBeenCalledTimes(0);
+    expect(console.error).toHaveBeenCalledTimes(1);
+    expect(console.error).toHaveBeenCalledWith(`Missing required <input>
    Use: firebase-rules-coverage <input>`);
   });
 });

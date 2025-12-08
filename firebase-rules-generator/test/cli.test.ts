@@ -38,8 +38,8 @@ describe('CLI', () => {
       };
     });
     await import('../src/cli.js');
-    expect(buildFile).toBeCalledTimes(1);
-    expect(buildFile).toBeCalledWith(
+    expect(buildFile).toHaveBeenCalledTimes(1);
+    expect(buildFile).toHaveBeenCalledWith(
       path.resolve('fixtures/index.rules'),
       path.resolve('fixtures/output/firestore.rules'),
       true,
@@ -62,9 +62,9 @@ describe('CLI', () => {
     });
     await import('../src/cli.js');
 
-    expect(buildFile).toBeCalledTimes(0);
-    expect(console.error).toBeCalledTimes(1);
-    expect(console.error).toBeCalledWith(`Missing required <input>
+    expect(buildFile).toHaveBeenCalledTimes(0);
+    expect(console.error).toHaveBeenCalledTimes(1);
+    expect(console.error).toHaveBeenCalledWith(`Missing required <input>
    Use: firebase-build-rules <input>`);
   });
 });
