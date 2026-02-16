@@ -1,0 +1,8 @@
+name: Auto approve
+on: pull_request
+
+jobs:
+  approve:
+    uses: simpleclub/.github/.github/workflows/auto-approve.yml@main
+    with:
+      pull-request-number: ${{ github.event.pull_request.number }}

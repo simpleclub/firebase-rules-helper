@@ -1,6 +1,6 @@
 # Matches everything regarding the overall repo setup, but not the individual packages.
-*                               @IchordeDionysos
+*                               @simpleclub/backend-red
 
 # Matches each package individually.
-firebase-rules-coverage/        @IchordeDionysos
-firebase-rules-generator/       @IchordeDionysos
+firebase-rules-coverage/        @simpleclub/backend-red
+firebase-rules-generator/       @simpleclub/backend-red

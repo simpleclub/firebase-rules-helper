@@ -1,0 +1,39 @@
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+
+name: release-please
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    outputs:
+      prs_created: ${{ steps.release.outputs.prs_created }}
+      prs: ${{ steps.release.outputs.prs }}
+    steps:
+      - uses: simpleclub-extended/release-please-action@task/improve-error-when-failing-to-create-pr
+        id: release
+        with:
+          token: ${{ secrets.RELEASE_PLEASE_GITHUB_PAT }}
+          config-file: .github/release-please-config.json
+          manifest-file: .github/release-please-manifest.json
+
+  enable-auto-merge:
+    needs: [ release-please ]
+    if: needs.release-please.outputs.prs_created == 'true'
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        value: ${{ fromJSON(needs.release-please.outputs.prs) }}
+    steps:
+      - name: Checkout # Required by gh CLI to initiate a merge
+        uses: actions/checkout@v6
+      - name: Enable Pull Request Automerge
+        run: gh pr merge --squash --auto "${{ matrix.value.number }}"
+        env:
+          GH_TOKEN: ${{ secrets.RELEASE_PLEASE_GITHUB_PAT }}
