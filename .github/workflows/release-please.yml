@@ -17,7 +17,7 @@ jobs:
       prs_created: ${{ steps.release.outputs.prs_created }}
       prs: ${{ steps.release.outputs.prs }}
     steps:
-      - uses: simpleclub-extended/release-please-action@2dd2db6b71ad665628fecf074eb75656b9a5b87d # task/improve-error-when-failing-to-create-pr
+      - uses: simpleclub-extended/release-please-action@task/improve-error-when-failing-to-create-pr
         id: release
         with:
           token: ${{ secrets.RELEASE_PLEASE_GITHUB_PAT }}
@@ -33,7 +33,7 @@ jobs:
         value: ${{ fromJSON(needs.release-please.outputs.prs) }}
     steps:
       - name: Checkout # Required by gh CLI to initiate a merge
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        uses: actions/checkout@v6
       - name: Enable Pull Request Automerge
         run: gh pr merge --squash --auto "${{ matrix.value.number }}"
         env:

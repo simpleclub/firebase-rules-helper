@@ -5,6 +5,6 @@ permissions: {}
 
 jobs:
   approve:
-    uses: simpleclub/.github/.github/workflows/auto-approve.yml@342720cdd7875e9c876e09af1e8a4eda65464c81 # main
+    uses: simpleclub/.github/.github/workflows/auto-approve.yml@main
     with:
       pull-request-number: ${{ github.event.pull_request.number }}
