@@ -1,6 +1,8 @@
 name: Auto approve
 on: pull_request
 
+permissions: {}
+
 jobs:
   approve:
     uses: simpleclub/.github/.github/workflows/auto-approve.yml@main
