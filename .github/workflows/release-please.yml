@@ -10,14 +10,11 @@ name: release-please
 jobs:
   release-please:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
     outputs:
       prs_created: ${{ steps.release.outputs.prs_created }}
       prs: ${{ steps.release.outputs.prs }}
     steps:
-      - uses: simpleclub-extended/release-please-action@task/improve-error-when-failing-to-create-pr
+      - uses: googleapis/release-please-action@v4
         id: release
         with:
           token: ${{ secrets.RELEASE_PLEASE_GITHUB_PAT }}
