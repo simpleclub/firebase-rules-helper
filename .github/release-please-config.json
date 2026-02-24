@@ -1,0 +1,28 @@
+{
+  "bootstrap-sha": "7aaf86e5b7a9cd9ca2796f2297329a66f8a9324b",
+  "include-component-in-tag": true,
+  "changelog-sections": [
+    { "type": "feat", "section": "Features" },
+    { "type": "feature", "section": "Features" },
+    { "type": "fix", "section": "Bug Fixes" },
+    { "type": "perf", "section": "Performance Improvements" },
+    { "type": "revert", "section": "Reverts" },
+    { "type": "docs", "section": "Documentation" },
+    { "type": "style", "section": "Styles" },
+    { "type": "chore", "section": "Miscellaneous Chores" },
+    { "type": "refactor", "section": "Code Refactoring" },
+    { "type": "test", "section": "Tests" },
+    { "type": "deps", "section": "Dependencies" },
+    { "type": "test", "section": "Tests", "hidden": true },
+    { "type": "build", "section": "Build System", "hidden": true },
+    { "type": "ci", "section": "Continuous Integration", "hidden": true }
+  ],
+  "packages": {
+    "firebase-rules-coverage": {
+      "component": "firebase-rules-coverage"
+    },
+    "firebase-rules-generator": {
+      "component": "firebase-rules-generator"
+    }
+  }
+}
