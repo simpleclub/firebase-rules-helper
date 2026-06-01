@@ -42,6 +42,6 @@
     "typescript": "~5.9.3"
   },
   "resolutions": {
-    "tmp": "^0.2.5"
+    "tmp": "^0.2.6"
   }
 }
