@@ -3,7 +3,7 @@ id: 'ari:cloud:compass:8072ec69-bd2f-4082-a110-02e57b2c244d:component/ec01753c-5
 description: A package to track test coverage of your Firestore security rules.
 configVersion: 1
 typeId: LIBRARY
-ownerId: 'ari:cloud:teams::team/8a6af455-d773-4bdf-a4ad-4f62116b1830'
+ownerId: 'ari:cloud:teams::team/27bf87a2-c155-4b4b-9fea-4d1f3b25a1b0' # Red team
 fields:
   lifecycle: Active
   tier: 4
