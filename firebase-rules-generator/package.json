@@ -32,16 +32,16 @@
     "source-map": "^0.8.0"
   },
   "devDependencies": {
-    "@jest/globals": "^30.3.0",
+    "@jest/globals": "^30.4.1",
     "@types/jest": "^30.0.0",
-    "@types/node": "^25.6.0",
+    "@types/node": "^20.19.43",
     "gts": "6.0.2",
-    "jest": "^30.3.0",
-    "ts-jest": "^29.4.9",
+    "jest": "^30.4.2",
+    "ts-jest": "^29.4.12",
     "ts-node": "^10.9.2",
     "typescript": "~5.9.3"
   },
   "resolutions": {
-    "tmp": "^0.2.6"
+    "tmp": "^0.2.7"
   }
 }
