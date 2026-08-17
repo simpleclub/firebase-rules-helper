@@ -37,6 +37,8 @@ For setup instructions and how to use it see: [Firebase rules coverage]
 
 *[1] The storage emulator does not provide a test report, yet. Hopefully it will do it as well.*
 
+## Publishing
+New version is published by creating a new release in GitHub. Make sure to update version in package.json in your PR. 
 
 [Imports for Firestore Security rules]: https://medium.com/firebase-developers/imports-for-firestore-security-rules-are-the-best-26f0770ad23c
 [Firebase rules generator]: https://github.com/simpleclub/firebase-rules-helper/blob/main/firebase-rules-generator
