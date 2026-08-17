@@ -20,7 +20,7 @@ customFields:
     value: b05320ef-1ef9-4314-baa6-7ff897d67da2 # Manual
   - name: NodeJS Version
     type: number
-    value: 20
+    value: 22
 
 # Learn more about formatting compass.yml:
 # https://go.atlassian.com/compass-yml-format
