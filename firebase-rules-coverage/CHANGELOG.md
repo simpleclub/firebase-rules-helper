@@ -1,5 +1,9 @@
 # @simpleclub/firebase-rules-coverage
 
+## 2.0.0
+
+- Node.js version upgrade to 22
+
 ## 1.1.0
 
 - Upgrade dependencies to fix security vulnerabilities (js-yaml, tmp)

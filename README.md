@@ -37,6 +37,8 @@ For setup instructions and how to use it see: [Firebase rules coverage]
 
 *[1] The storage emulator does not provide a test report, yet. Hopefully it will do it as well.*
 
+## Publishing
+Publish a package by creating a GitHub release with a tag in the format `@simpleclub/<package-name>@<version>`, for example `@simpleclub/firebase-rules-coverage@v2.0.0`. The package name must match the target package directory. Make sure to update the version in package.json in your PR. 
 
 [Imports for Firestore Security rules]: https://medium.com/firebase-developers/imports-for-firestore-security-rules-are-the-best-26f0770ad23c
 [Firebase rules generator]: https://github.com/simpleclub/firebase-rules-helper/blob/main/firebase-rules-generator
