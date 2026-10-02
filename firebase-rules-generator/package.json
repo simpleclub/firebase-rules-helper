@@ -34,7 +34,7 @@
   "devDependencies": {
     "@jest/globals": "^30.5.2",
     "@types/jest": "^30.0.0",
-    "@types/node": "^22.20.4",
+    "@types/node": "^26.6.3",
     "gts": "7.0.0",
     "jest": "^30.5.2",
     "ts-jest": "^29.4.14",
