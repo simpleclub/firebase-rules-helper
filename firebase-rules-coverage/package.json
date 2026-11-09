@@ -35,14 +35,17 @@
   "devDependencies": {
     "@jest/globals": "^30.5.2",
     "@types/jest": "^30.0.0",
-    "@types/node": "^22.20.4",
+    "@types/node": "^22.20.5",
     "gts": "7.0.0",
     "jest": "^30.5.2",
-    "ts-jest": "^29.4.14",
+    "ts-jest": "^29.4.15",
     "ts-node": "^10.9.2",
     "typescript": "~6.0.3"
   },
   "resolutions": {
-    "tmp": "^0.2.7"
+    "tmp": "^0.2.7",
+    "**/glob/minimatch": "^11.0.1",
+    "**/@typescript-eslint/typescript-estree/minimatch": "^11.0.1",
+    "glob": "^14.0.2"
   }
 }
