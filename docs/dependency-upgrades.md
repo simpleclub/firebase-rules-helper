@@ -44,3 +44,7 @@ absolute, so normalize them before diffing.
 | ------- | ---- | ----------------- |
 | `@types/node` | Stay on `^22.x`; Dependabot's 26.x PRs are superseded, not merged | Typings track the Node 22 runtime floor (`engines`, CI matrix, `.nvmrc`). #168, SC-22900. |
 | `tmp` | Keep resolution `^0.2.7` | The tree's only `tmp` is `gts → inquirer → external-editor` (`^0.0.33`). Removing the pin resolves `tmp@0.0.33` (GHSA-ph9p-34f9-6g65). Re-verified SC-22189, SC-22900. |
+| `typescript` | Stay on `~6.0.x`; 7.x held | `ts-jest` peer range is `typescript >=4.3 <7`, so 7.x is unsupported by the test transformer. Re-check when ts-jest widens the range. SC-23622. |
+| `minimatch` (resolutions) | Path-scoped `**/glob/minimatch`, `**/test-exclude/minimatch` and `**/@typescript-eslint/typescript-estree/minimatch` → `^11.0.1`; no blanket pin | Advisory GHSA-g3hv-75wg-m249 covers `>=7 <11.0.1` only, so `eslint`'s `minimatch@3` is unaffected and a blanket pin to 11 would break it (3.x exports a function). Yarn 1 has no `pkg@range` resolution keys. SC-23622. |
+| `glob` (resolution) | Keep `^14.0.2` | GHSA-3g3m-2fjr-6pw4 (`>=9 <=14.0.1`); jest's `test-exclude` (10.x) and gts (13.x) both work on 14 incl. `jest --coverage`. SC-23622. |
+| `deepmerge` | Not addressed | GHSA-gcqx-w48m-w2h4 has no patched version; requester is `jest-config`. SC-23622. |
